@@ -1,0 +1,53 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import TimelineEntry from '../ui/TimelineEntry.astro';
+
+interface Props {
+  experience: CollectionEntry<'experience'>[];
+}
+const { experience } = Astro.props;
+---
+
+<section id="experience" class="section-padding max-w-6xl mx-auto">
+  <div class="text-center mb-14" data-reveal>
+    <p class="text-sm font-mono mb-2" style="color: var(--color-primary);">// experiencia</p>
+    <h2 class="section-title">Trayectoria</h2>
+  </div>
+
+  <!-- Timeline container -->
+  <div class="relative max-w-3xl mx-auto">
+    <!-- Vertical line -->
+    <div
+      class="absolute left-0 md:left-1/2 top-0 bottom-0 w-px hidden md:block"
+      id="timeline-line"
+      style="background: linear-gradient(to bottom, var(--color-primary), var(--color-secondary), transparent); transform-origin: top center;"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Mobile line -->
+    <div
+      class="absolute left-4 top-0 bottom-0 w-px md:hidden"
+      style="background: linear-gradient(to bottom, rgba(34,211,238,0.3), transparent);"
+      aria-hidden="true"
+    ></div>
+
+    <div class="space-y-0 pl-8 md:pl-0">
+      {experience.map((entry, i) => (
+        <TimelineEntry
+          company={entry.data.company}
+          role={entry.data.role}
+          period={entry.data.period}
+          location={entry.data.location}
+          techs={entry.data.techs}
+          highlights={entry.data.highlights}
+          index={i}
+        />
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  import { initTimelineAnimation } from '../../scripts/gsap/timeline';
+  initTimelineAnimation();
+</script>

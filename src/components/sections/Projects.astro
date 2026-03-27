@@ -1,0 +1,62 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import ProjectCard from '../ui/ProjectCard.astro';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+const { projects } = Astro.props;
+
+const filterOptions = [
+  { label: 'Todos', value: 'all' },
+  { label: 'Backend', value: 'backend' },
+  { label: 'Frontend', value: 'frontend' },
+  { label: 'Mobile', value: 'mobile' },
+  { label: 'AI', value: 'ai' },
+  { label: 'DevOps', value: 'devops' },
+];
+---
+
+<section id="projects" class="section-padding max-w-6xl mx-auto">
+  <div class="text-center mb-12" data-reveal>
+    <p class="text-sm font-mono mb-2" style="color: var(--color-accent);">// proyectos</p>
+    <h2 class="section-title">Trabajo real</h2>
+    <p class="text-base mt-2 max-w-lg mx-auto" style="color: var(--color-text-muted);">
+      Proyectos profesionales y personales que demuestran cómo pienso los sistemas.
+    </p>
+  </div>
+
+  <!-- Filter bar -->
+  <div class="flex flex-wrap justify-center gap-2 mb-10">
+    {filterOptions.map(({ label, value }) => (
+      <button
+        data-filter={value}
+        class={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${value === 'all' ? 'filter-active' : ''}`}
+        style={value !== 'all' ? 'background: transparent; border-color: var(--color-border); color: var(--color-text-muted);' : ''}
+      >
+        {label}
+      </button>
+    ))}
+  </div>
+
+  <!-- Projects grid -->
+  <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {projects.map((project) => (
+      <ProjectCard
+        title={project.data.title}
+        tagline={project.data.tagline}
+        period={project.data.period}
+        techs={project.data.techs}
+        categories={project.data.categories}
+        links={project.data.links}
+        highlights={project.data.highlights}
+        featured={project.data.featured}
+      />
+    ))}
+  </div>
+</section>
+
+<script>
+  import { initProjectFilter } from '../../scripts/projects/filter';
+  initProjectFilter();
+</script>

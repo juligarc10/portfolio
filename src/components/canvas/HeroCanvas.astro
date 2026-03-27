@@ -1,0 +1,14 @@
+---
+// No props — all behavior in heroParticles.ts
+---
+
+<canvas
+  id="hero-canvas"
+  class="absolute inset-0 w-full h-full pointer-events-none"
+  aria-hidden="true"
+></canvas>
+
+<script>
+  import { initHeroParticles } from '../../scripts/canvas/heroParticles';
+  initHeroParticles('hero-canvas');
+</script>

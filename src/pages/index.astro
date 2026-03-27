@@ -1,0 +1,45 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/ui/NavBar.astro';
+import Hero from '../components/sections/Hero.astro';
+import About from '../components/sections/About.astro';
+import Skills from '../components/sections/Skills.astro';
+import Projects from '../components/sections/Projects.astro';
+import Timeline from '../components/sections/Timeline.astro';
+import Contact from '../components/sections/Contact.astro';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+const experience = (await getCollection('experience')).sort(
+  (a, b) => a.data.order - b.data.order
+);
+---
+
+<BaseLayout>
+  <NavBar />
+  <main>
+    <Hero />
+    <About />
+    <Skills />
+    <Projects projects={projects} />
+    <Timeline experience={experience} />
+    <Contact />
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center py-8 px-6" style="color: var(--color-text-faint); border-top: 1px solid var(--color-border);">
+    <p class="text-xs font-mono">
+      Construido con <span style="color: var(--color-primary);">Astro</span> ·
+      <span style="color: var(--color-secondary);">GSAP</span> ·
+      <span style="color: var(--color-accent);">Canvas</span>
+      — Julián García Pallas © 2026
+    </p>
+  </footer>
+</BaseLayout>
+
+<script>
+  import { initSectionAnimations } from '../scripts/gsap/sections';
+  initSectionAnimations();
+</script>
