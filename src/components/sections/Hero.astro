@@ -1,6 +1,4 @@
 ---
-import HeroCanvas from '../canvas/HeroCanvas.astro';
-
 // Split name into individual character spans for GSAP animation
 const name = 'Julián García Pallas';
 const tagline = 'Backend Architect · Fullstack Engineer';
@@ -8,11 +6,8 @@ const tagline = 'Backend Architect · Fullstack Engineer';
 
 <section
   id="hero"
-  class="relative min-h-screen flex items-center justify-center overflow-hidden"
+  class="relative min-h-screen flex items-center justify-center"
 >
-  <!-- Canvas background -->
-  <HeroCanvas />
-
   <!-- Radial gradient overlay to focus text -->
   <div
     class="absolute inset-0 pointer-events-none"

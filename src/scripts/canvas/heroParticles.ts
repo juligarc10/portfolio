@@ -10,7 +10,7 @@ interface Particle {
   color: string;
 }
 
-export function initHeroParticles(canvasId = 'hero-canvas') {
+export function initHeroParticles(canvasId = 'bg-canvas') {
   // Respect prefers-reduced-motion
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
 
@@ -20,28 +20,28 @@ export function initHeroParticles(canvasId = 'hero-canvas') {
   if (!ctx) return;
 
   let raf: number;
+  // Mouse coords map directly to canvas since it's fixed at (0,0)
   const mouse = { x: -1000, y: -1000 };
 
   const resize = () => {
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
   };
   resize();
   window.addEventListener('resize', resize, { passive: true });
 
-  // Mouse tracking on hero section
-  const hero = canvas.parentElement;
-  hero?.addEventListener('mousemove', (e: MouseEvent) => {
-    const rect = canvas.getBoundingClientRect();
-    mouse.x = e.clientX - rect.left;
-    mouse.y = e.clientY - rect.top;
+  // Track mouse across the entire document
+  document.addEventListener('mousemove', (e: MouseEvent) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
   }, { passive: true });
-  hero?.addEventListener('mouseleave', () => {
+
+  document.addEventListener('mouseleave', () => {
     mouse.x = -1000;
     mouse.y = -1000;
   }, { passive: true });
 
-  const COUNT = window.innerWidth < 768 ? 55 : 110;
+  const COUNT = window.innerWidth < 768 ? 60 : 130;
   const COLORS = ['#22d3ee', '#a855f7', '#ec4899', '#38bdf8'];
   const CONNECT_DIST = 130;
   const REPEL_DIST = 100;
@@ -50,8 +50,8 @@ export function initHeroParticles(canvasId = 'hero-canvas') {
     const vx = (Math.random() - 0.5) * 0.45;
     const vy = (Math.random() - 0.5) * 0.45;
     return {
-      x: Math.random() * (canvas.width || window.innerWidth),
-      y: Math.random() * (canvas.height || window.innerHeight),
+      x: Math.random() * window.innerWidth,
+      y: Math.random() * window.innerHeight,
       vx, vy, baseVx: vx, baseVy: vy,
       size: Math.random() * 2 + 0.8,
       opacity: Math.random() * 0.45 + 0.2,
@@ -65,7 +65,7 @@ export function initHeroParticles(canvasId = 'hero-canvas') {
     for (let i = 0; i < COUNT; i++) {
       const p = particles[i];
 
-      // Mouse repulsion
+      // Mouse repulsion (clientX/Y maps directly to fixed canvas)
       const dx = p.x - mouse.x;
       const dy = p.y - mouse.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
@@ -119,7 +119,6 @@ export function initHeroParticles(canvasId = 'hero-canvas') {
 
   draw();
 
-  // Cleanup for Astro view transitions
   document.addEventListener('astro:before-swap', () => {
     cancelAnimationFrame(raf);
     window.removeEventListener('resize', resize);
