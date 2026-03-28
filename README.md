@@ -1,10 +1,6 @@
-# Astro Starter Kit: Minimal
+# My Personal Portfolio
 
-```sh
-npm create astro@latest -- --template minimal
-```
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+This repository hosts my personal portfolio website, built with Astro. It showcases my projects, skills, and professional experience.
 
 ## 🚀 Project Structure
 
