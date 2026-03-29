@@ -4,7 +4,7 @@ tagline: "PC reciclado convertido en servidor de producción con k3s y Cloudflar
 description: "Conversión de un PC personal antiguo en un servidor de producción real: orquestación de contenedores con k3s (Kubernetes ligero), despliegue continuo desde GitHub Actions, y exposición segura de servicios a internet sin IP pública ni puertos abiertos gracias a Cloudflare Tunnel. Este mismo portfolio — y todos los proyectos que contiene — corren sobre esa infraestructura. El hecho de que estés leyendo esto es la prueba."
 role: "Autor (proyecto personal)"
 period: "2025"
-image: "/images/projects/placeholder.png"
+image: "/images/projects/homelab.png"
 techs:
   [
     "k3s",

@@ -4,7 +4,7 @@ tagline: "Extensión de Chrome para aprender idiomas viendo Netflix y YouTube"
 description: "Extensión de Chrome que convierte cualquier sesión de Netflix o YouTube en una clase de idiomas: al pasar el ratón por las palabras de los subtítulos aparece la traducción instantánea, se pueden guardar palabras con su contexto y se hace seguimiento del progreso diario con un sistema de streaks. Construida con React, Chrome Manifest V3 y la API de MyMemory."
 role: "Autor (proyecto personal)"
 period: "2025"
-image: "/images/projects/placeholder.png"
+image: "/images/projects/submerge.png"
 techs:
   [
     "React",

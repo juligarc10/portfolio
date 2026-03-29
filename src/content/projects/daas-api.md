@@ -4,7 +4,7 @@ tagline: "Plataforma multi-tenant enterprise con Clean Architecture hexagonal"
 description: "Gestiona organizaciones, suscripciones, aprovisionamiento de servidores e identidad (Keycloak + SCIM 2.0) con aislamiento completo por tenant. Arquitectura hexagonal en 7 módulos Gradle con tests de aceptación (Cucumber) y CI/CD en Bitbucket Pipelines. La decisión de elegir arquitectura hexagonal sobre arquitectura en capas permite testar el dominio de forma completamente independiente del framework Spring."
 role: "Full-Stack Engineer"
 period: "2023 – actualidad"
-image: "/images/projects/saas.png"
+image: "/images/projects/daas-api.png"
 techs:
   [
     "Java 17",

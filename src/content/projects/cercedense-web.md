@@ -4,7 +4,7 @@ tagline: "Web oficial de un club deportivo con scraping automático de resultado
 description: "Sitio web para el Atlético Cercedense con navegación scroll-based por paneles, galería, calendario de eventos y resultados de partidos actualizados automáticamente mediante web scraping con Puppeteer sobre la web de la liga. Proyecto real en producción para un cliente."
 role: "Autor (proyecto freelance)"
 period: "2025"
-image: "/images/projects/placeholder.png"
+image: "/images/projects/cercedense-web.png"
 techs:
   [
     "Astro",
