@@ -5,10 +5,20 @@ description: "Monorepo de aprendizaje arquitectónico: una plataforma SaaS multi
 role: "Autor (proyecto de aprendizaje)"
 period: "2025 – actualidad"
 image: "/images/projects/nexus.png"
-techs: ["TypeScript", "Node.js", "Fastify", "PostgreSQL", "Testcontainers", "DDD", "CQRS", "Event Sourcing"]
+techs:
+  [
+    "TypeScript",
+    "Node.js",
+    "Fastify",
+    "PostgreSQL",
+    "Testcontainers",
+    "DDD",
+    "CQRS",
+    "Event Sourcing",
+  ]
 categories: ["backend"]
 links:
-  github: "https://github.com/juliangarciap/nexus"
+  github: "https://github.com/juligarc10/nexus"
 featured: true
 order: 3
 highlights:

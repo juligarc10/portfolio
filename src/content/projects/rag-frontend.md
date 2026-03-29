@@ -1,11 +1,22 @@
 ---
 title: "RAG Knowledge Base"
 tagline: "Interfaz conversacional sobre documentos con streaming en tiempo real"
-description: "Sistema RAG (Retrieval-Augmented Generation) completo: frontend conversacional en Astro 6 con streaming de respuestas en tiempo real y animaciones GSAP, conectado a un backend Python con ChromaDB como vector store, LangChain para la cadena de recuperación y embeddings, y un LLM para síntesis de respuestas. Desplegado con Docker + Nginx en un VPS."
+description: "Sistema RAG (Retrieval-Augmented Generation) completo: frontend conversacional en Astro 6 con streaming de respuestas en tiempo real y animaciones GSAP, conectado a un backend Python con ChromaDB como vector store, con cadena de recuperación y embeddings, y un LLM para síntesis de respuestas. Desplegado con Docker + Nginx en un VPS."
 role: "Autor (proyecto personal)"
 period: "2025"
 image: "/images/projects/rag-frontend.png"
-techs: ["Astro", "GSAP", "TypeScript", "Python", "FastAPI", "ChromaDB", "LangChain", "Docker", "Nginx"]
+techs:
+  [
+    "Astro",
+    "GSAP",
+    "TypeScript",
+    "Python",
+    "FastAPI",
+    "ChromaDB",
+    "LangChain",
+    "Docker",
+    "Nginx",
+  ]
 categories: ["ai", "frontend"]
 links: {}
 featured: false

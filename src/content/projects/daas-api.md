@@ -1,14 +1,25 @@
 ---
-title: "Denodo AAS API"
+title: "Plataforma SAAS"
 tagline: "Plataforma multi-tenant enterprise con Clean Architecture hexagonal"
-description: "API RESTful que alimenta la oferta DaaS de Denodo. Gestiona organizaciones, suscripciones, aprovisionamiento de servidores e identidad (Keycloak + SCIM 2.0) con aislamiento completo por tenant. Arquitectura hexagonal en 7 módulos Gradle con tests de aceptación BDD (Cucumber) y CI/CD en Bitbucket Pipelines. La decisión de elegir arquitectura hexagonal sobre arquitectura en capas permite testar el dominio de forma completamente independiente del framework Spring."
-role: "Full-Stack Engineer (Backend Lead)"
+description: "Gestiona organizaciones, suscripciones, aprovisionamiento de servidores e identidad (Keycloak + SCIM 2.0) con aislamiento completo por tenant. Arquitectura hexagonal en 7 módulos Gradle con tests de aceptación (Cucumber) y CI/CD en Bitbucket Pipelines. La decisión de elegir arquitectura hexagonal sobre arquitectura en capas permite testar el dominio de forma completamente independiente del framework Spring."
+role: "Full-Stack Engineer"
 period: "2023 – actualidad"
-image: "/images/projects/daas-api.png"
-techs: ["Java 17", "Spring Boot", "MongoDB", "Keycloak", "SCIM 2.0", "Docker", "Gradle", "Cucumber", "Bitbucket Pipelines", "SonarQube"]
-categories: ["backend", "devops"]
-links:
-  live: "https://community.denodo.com"
+image: "/images/projects/saas.png"
+techs:
+  [
+    "Java 17",
+    "Spring Boot",
+    "MongoDB",
+    "Keycloak",
+    "SCIM 2.0",
+    "Docker",
+    "Gradle",
+    "GraphQL",
+    "Cucumber",
+    "Bitbucket Pipelines",
+    "SonarQube",
+  ]
+categories: ["backend", "frontend", "devops"]
 featured: true
 order: 1
 highlights:

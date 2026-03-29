@@ -5,14 +5,14 @@ description: "Aplicación móvil cross-platform de time-tracking construida con 
 role: "Autor (proyecto personal)"
 period: "2024 – 2025"
 image: "/images/projects/finetime.png"
-techs: ["React Native", "Expo", "TypeScript", "Firebase", "Firestore", "Expo Router", "NativeWind"]
+techs: ["React Native", "Expo", "TypeScript", "Expo Router", "NativeWind"]
 categories: ["mobile"]
 links: {}
 featured: false
 order: 6
 highlights:
   - "Expo Router con layouts anidados — arquitectura de navegación file-based"
-  - "Sincronización en tiempo real con Firebase Firestore onSnapshot"
-  - "Autenticación completa con Firebase Auth (email + Google Sign-In)"
+  - "Sincronización en tiempo real con backend con base de datos MySQL integrada"
+  - "Autenticación completa con OAuth 2.0 para Google"
   - "NativeWind para estilos consistentes entre iOS y Android"
 ---
