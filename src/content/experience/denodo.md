@@ -1,5 +1,5 @@
 ---
-company: "Denodo Technologies"
+company: "Diverger Thinking S.L"
 role: "Software Engineer"
 period: "2023 – actualidad"
 startDate: "2023-06"
@@ -19,10 +19,8 @@ techs:
     "React",
   ]
 highlights:
-  - "Diseño e implementación de la arquitectura hexagonal del módulo de identidad (Keycloak + SCIM 2.0)"
-  - "Liderazgo técnico del backend de la plataforma DaaS multi-tenant"
-  - "Reducción del tiempo de onboarding de clientes enterprise mediante automatización SCIM"
-  - "Implementación de tests BDD con Cucumber que sirven como documentación viva"
+  - "Trabajo en la plataforma DaaS multi-tenant"
+  - "Automatización de revisiones de Pull Requests con IA"
   - "Participante en AI Hackathon interno Q1 2026 — distinción 'AI Ready'"
 order: 2
 ---
