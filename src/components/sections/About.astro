@@ -1,22 +1,31 @@
 ---
 ---
 
+<style>
+  .photo-bw {
+    filter: grayscale(100%) contrast(1.1) sepia(25%) hue-rotate(160deg);
+    transition: filter 0.5s ease;
+  }
+
+  .photo-wrapper:hover .photo-bw {
+    filter: grayscale(0%) contrast(1) sepia(0%) hue-rotate(0deg);
+  }
+</style>
+
 <section id="about" class="section-padding max-w-6xl mx-auto">
   <div class="grid md:grid-cols-2 gap-12 lg:gap-20 items-center">
 
     <!-- Photo placeholder -->
     <div id="about-photo" class="flex justify-center md:justify-end">
       <div
-        class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-2xl overflow-hidden"
-        style="border: 1px solid var(--color-border-primary); box-shadow: 0 0 40px rgba(34,211,238,0.1);"
+        class="relative w-64 h-64 lg:w-80 lg:h-80 rounded-2xl overflow-hidden photo-wrapper"
+        style="border: 1px solid var(--color-border-primary); box-shadow: 0 0 40px rgba(34,211,238,0.15);"
       >
-        <!-- Replace with your actual photo: <img src="/images/avatar.jpg" alt="Julián García Pallas" class="w-full h-full object-cover" /> -->
-        <div
-          class="w-full h-full flex items-center justify-center text-6xl"
-          style="background: linear-gradient(135deg, rgba(34,211,238,0.1), rgba(168,85,247,0.1));"
-        >
-          👨‍💻
-        </div>
+        <img
+          src="/images/projects/foto.JPG"
+          alt="Julián García Pallas"
+          class="photo-bw w-full h-full object-cover object-top"
+        />
         <!-- Decorative corner accent -->
         <div
           class="absolute top-0 right-0 w-16 h-16"

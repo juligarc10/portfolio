@@ -16,15 +16,20 @@ export function initHeroAnimations() {
     });
   }
 
-  // Tagline words
+  // Tagline: el `y` va en el padre (sin romper background-clip:text en Chrome)
+  // y el stagger de opacidad va en las palabras hijas
+  const tagline = document.querySelector('#hero-tagline');
   const taglineWords = document.querySelectorAll('#hero-tagline .word');
-  if (taglineWords.length) {
+  if (tagline && taglineWords.length) {
+    tl.from(tagline, {
+      y: 30,
+      duration: 0.6,
+    }, '-=0.3');
     tl.from(taglineWords, {
       opacity: 0,
-      y: 30,
-      duration: 0.5,
+      duration: 0.45,
       stagger: 0.07,
-    }, '-=0.3');
+    }, '<');
   }
 
   // Sub-tagline
