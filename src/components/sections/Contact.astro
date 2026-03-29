@@ -22,7 +22,7 @@
       <!-- Direct contact -->
       <div class="flex flex-col sm:flex-row gap-4">
         <a
-          href="mailto:juliangarcia940@gmail.com"
+          href="mailto:contact@jgp-server.com"
           class="flex-1 flex items-center gap-3 p-4 rounded-xl transition-all duration-200 hover:scale-[1.02]"
           style="background: rgba(34,211,238,0.06); border: 1px solid rgba(34,211,238,0.15); color: var(--color-primary);"
         >
@@ -40,7 +40,7 @@
           </svg>
           <div>
             <p class="text-xs" style="color: var(--color-text-muted);">Email</p>
-            <p class="text-sm font-medium">juliangarcia940@gmail.com</p>
+            <p class="text-sm font-medium">contact@jgp-server.com</p>
           </div>
         </a>
         <a
@@ -161,7 +161,7 @@
     const data = new FormData(form);
     try {
       const res = await fetch(
-        `https://formsubmit.co/ajax/juliangarcia940@gmail.com`,
+        `https://formsubmit.co/ajax/contact@jgp-server.com`,
         {
           method: "POST",
           headers: { Accept: "application/json" },
@@ -183,7 +183,7 @@
     } catch {
       if (feedback) {
         feedback.textContent =
-          "✗ Error al enviar. Escríbeme directamente a juliangarcia940@gmail.com";
+          "✗ Error al enviar. Escríbeme directamente a contact@jgp-server.com";
         feedback.style.background = "rgba(236,72,153,0.1)";
         feedback.style.color = "var(--color-accent)";
         feedback.classList.remove("hidden");
