@@ -97,8 +97,18 @@ const sampleQuestions = [
     transition: opacity 200ms ease, transform 200ms ease;
   }
 
-  .ai-widget:hover .ai-tooltip,
-  .ai-widget:focus-within .ai-tooltip {
+  /* Desktop: hover CSS clásico */
+  @media (hover: hover) {
+    .ai-widget:hover .ai-tooltip,
+    .ai-widget:focus-within .ai-tooltip {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+      pointer-events: auto;
+    }
+  }
+
+  /* Móvil: abierto por tap en el botón (JS) */
+  .ai-tooltip.is-open {
     opacity: 1;
     transform: translateY(0) scale(1);
     pointer-events: auto;
@@ -169,4 +179,22 @@ const sampleQuestions = [
     ease: 'back.out(1.4)',
     delay: 3.2,
   });
+
+  // Móvil: abrir solo al tocar el botón, cerrar al tocar fuera
+  if (window.matchMedia('(hover: none)').matches) {
+    const btn = document.getElementById('ai-btn');
+    const tooltip = document.getElementById('ai-tooltip');
+
+    btn?.addEventListener('click', (e) => {
+      e.preventDefault();
+      const isOpen = tooltip?.classList.toggle('is-open');
+      if (isOpen) {
+        setTimeout(() => {
+          document.addEventListener('click', () => {
+            tooltip?.classList.remove('is-open');
+          }, { once: true });
+        }, 0);
+      }
+    });
+  }
 </script>
