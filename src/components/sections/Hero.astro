@@ -1,7 +1,7 @@
 ---
 // Split name into individual character spans for GSAP animation
-const name = 'Julián García Pallas';
-const tagline = 'Backend Architect · Fullstack Engineer';
+const name = "Julián García Pallas";
+const tagline = "Backend Architect · Fullstack Engineer";
 ---
 
 <section
@@ -13,7 +13,8 @@ const tagline = 'Backend Architect · Fullstack Engineer';
     class="absolute inset-0 pointer-events-none"
     style="background: radial-gradient(ellipse 70% 60% at 50% 50%, rgba(34,211,238,0.04) 0%, transparent 70%);"
     aria-hidden="true"
-  ></div>
+  >
+  </div>
 
   <!-- Content -->
   <div class="relative z-10 text-center px-6 max-w-4xl mx-auto">
@@ -23,8 +24,10 @@ const tagline = 'Backend Architect · Fullstack Engineer';
       class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-8"
       style="background: rgba(34,211,238,0.08); border: 1px solid rgba(34,211,238,0.2); color: var(--color-primary);"
     >
-      <span class="w-1.5 h-1.5 rounded-full animate-pulse" style="background: var(--color-primary);"></span>
-      Disponible para nuevas oportunidades
+      <span
+        class="w-1.5 h-1.5 rounded-full animate-pulse"
+        style="background: var(--color-primary);"></span>
+      Trabajando en mi próximo proyecto... 🚀
     </div>
 
     <!-- Name with character split -->
@@ -33,12 +36,16 @@ const tagline = 'Backend Architect · Fullstack Engineer';
       class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-4 leading-tight"
       style="perspective: 400px;"
     >
-      {name.split('').map((char) => (
-        <span
-          class="char inline-block"
-          style={char === ' ' ? 'width: 0.3em;' : ''}
-        >{char === ' ' ? '\u00A0' : char}</span>
-      ))}
+      {
+        name.split("").map((char) => (
+          <span
+            class="char inline-block"
+            style={char === " " ? "width: 0.3em;" : ""}
+          >
+            {char === " " ? "\u00A0" : char}
+          </span>
+        ))
+      }
     </h1>
 
     <!-- Tagline with word split -->
@@ -46,9 +53,11 @@ const tagline = 'Backend Architect · Fullstack Engineer';
       id="hero-tagline"
       class="text-xl sm:text-2xl md:text-3xl font-light mb-3 gradient-text"
     >
-      {tagline.split(' ').map((word) => (
-        <span class="word inline-block mr-2">{word}</span>
-      ))}
+      {
+        tagline
+          .split(" ")
+          .map((word) => <span class="word inline-block mr-2">{word}</span>)
+      }
     </p>
 
     <!-- Sub tagline -->
@@ -61,7 +70,10 @@ const tagline = 'Backend Architect · Fullstack Engineer';
     </p>
 
     <!-- CTAs -->
-    <div id="hero-cta" class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <div
+      id="hero-cta"
+      class="flex flex-col sm:flex-row items-center justify-center gap-4"
+    >
       <a
         href="#projects"
         class="px-6 py-3 rounded-full font-medium text-sm transition-all duration-200 hover:scale-105 hover:shadow-lg"
@@ -79,14 +91,22 @@ const tagline = 'Backend Architect · Fullstack Engineer';
     </div>
 
     <!-- Scroll hint -->
-    <div id="hero-scroll" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-      <span class="text-xs" style="color: var(--color-text-faint);">scroll</span>
-      <div class="w-px h-8 animate-bounce" style="background: linear-gradient(to bottom, var(--color-text-faint), transparent);"></div>
+    <div
+      id="hero-scroll"
+      class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+    >
+      <span class="text-xs" style="color: var(--color-text-faint);">scroll</span
+      >
+      <div
+        class="w-px h-8 animate-bounce"
+        style="background: linear-gradient(to bottom, var(--color-text-faint), transparent);"
+      >
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  import { initHeroAnimations } from '../../scripts/gsap/hero';
+  import { initHeroAnimations } from "../../scripts/gsap/hero";
   initHeroAnimations();
 </script>
